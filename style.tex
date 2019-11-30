@@ -1,0 +1,97 @@
+\usepackage{environ}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{titlesec}
+\usepackage{changepage}
+
+
+\usepackage{titlesec, blindtext, color}
+\definecolor{gray75}{gray}{0.75}
+\renewcommand{\thechapter}{\Roman{chapter}}
+\titleformat{\chapter}[display]
+{\bfseries\Large}
+{\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}
+{2ex}
+{\titlerule
+\vspace{1ex}%
+\filright}
+[\vspace{1ex}%
+\titlerule]
+
+
+
+
+\NewEnviron{test}[2][]{
+\begin{center}
+    \begin{minipage}{10cm}
+       \begin{center}
+            {
+                \Large
+                \texttt{\color{gray} \index{#1} #1}
+                %\addcontentsline{toc}{subsection}{\; #1}
+            }
+            
+            %\hspace{2cm}
+            
+            {
+                \color{Aquamarine}
+                \fontsize{20}{20} \selectfont
+                
+                    $#2$ 
+                
+                
+            }
+            \hspace{2cm}
+            \begin{adjustwidth}{1cm}{2cm}
+            \begin{center}
+                \BODY
+            \end{center}
+            \end{adjustwidth}
+            
+            
+            
+            %\centerline{\rule{0.667\linewidth}{.9pt}}
+        \end{center}
+\end{minipage}
+\end{center}
+    
+
+}
+ 
+ 
+\NewEnviron{bigtest}[2][]{
+\begin{center}
+    
+       \begin{center}
+            {
+                \fontsize{60}{20} \selectfont
+                \texttt{\color{gray} \index{#1}#1}
+                %\addcontentsline{toc}{subsection}{\; #1}
+            }
+            
+            %\hspace{2cm}
+            
+            {
+                \color{Aquamarine}
+                \fontsize{20}{20} \selectfont
+                
+                    $#2$ 
+                
+                
+            }
+            \hspace{2cm}
+            %\begin{adjustwidth}{1cm}{2cm}
+            \begin{flushleft}
+                \BODY
+            \end{flushleft}
+            %\end{adjustwidth}
+            
+            
+            
+            %\centerline{\rule{0.667\linewidth}{.9pt}}
+        \end{center}
+
+\end{center}
+    
+
+}
+ 

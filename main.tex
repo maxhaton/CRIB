@@ -1,0 +1,110 @@
+\documentclass[a4paper, margin=0.5in]{book}
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{cancel}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{makeidx}
+\makeindex
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ bottom=30mm,
+ }
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+%-----------------------------------------------------------------
+
+% ----------------------------------------------------------------
+
+%
+
+\title{CRIB}
+\author{mhh}
+\date{Forever in \LaTeX  \: dreams}
+\input{style.tex}
+\usepackage{natbib}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+
+
+
+\usepackage{chngcntr}
+\counterwithin{chapter}{part}
+
+\usepackage{tocloft}
+\cftsetindents{chapter}{0em}{3em}
+\cftsetindents{section}{5em}{3em}
+\cftsetindents{subsection}{6em}{3em}
+
+\begin{document}
+\pagestyle{fancy}
+ 
+\definecolor{titlepagecolor}{cmyk}{1,.13,0.85,.14}
+\definecolor{namecolor}{cmyk}{1,.50,0,.10} 
+\fancyhead[L]{CRIB}
+\fancyhead[R]{\textbf{\thepage}}
+\begin{titlepage}
+    \newgeometry{left=7.5cm} %defines the geometry for the titlepage
+    \pagecolor{titlepagecolor}
+    \noindent
+    
+    \color{white}
+    \makebox[0pt][l]{\rule{1.3\textwidth}{1pt}}
+    \vspace{0.1cm}
+    \par
+    \noindent
+    \vspace{2cm}
+    \textbf{\fontsize{150}{20} \selectfont \color{orange} \textrm{\; CRIB}} \textcolor{black}{\fontsize{100}{20} \selectfont {Everything}}
+    \vfill
+    \noindent
+    {\Huge \textsf{mhh\_\_}}
+    \vskip\baselineskip
+    \noindent
+    \textsf{2019-}
+\end{titlepage}
+\restoregeometry 
+\nopagecolor
+
+
+
+\tableofcontents
+\part{Physics} 
+\chapter{(Newtonian) Mechanics}
+
+\section{Linear Concepts}
+    \input{words/newton/linear.tex}
+    \input{words/newton/rot.tex}        
+        
+    
+\chapter{Matter and Statistical Physics}
+    \input{words/matter.tex}
+\chapter{Electronics}
+    \input{words/electronics.tex}
+\chapter{Electrodynamics}
+    \input{words/electrodynamics.tex}
+\chapter{Non-relativistic Quantum Mechanics}
+    \input{words/qm.tex}
+\chapter{Special Relativity}
+    \input{words/srel.tex}
+
+\part{Mathematics}
+    \input{words/maths/maths.tex}
+    
+
+\bibliographystyle{plain}
+\bibliography{references}
+\printindex
+\end{document}
